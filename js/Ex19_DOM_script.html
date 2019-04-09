@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        //onload 이벤트 발생 시점 : body 태그 안에 있는 모든 요소가 브라우저에 loading 되고 난 후
+        //<body onload=call()>
+        //window.onload = call() 코드 방식도 가능
+
+        window.onlaod = function() { //함수 이름이 없어요(익명함수 : 일회성) : 재활용X
+            //page 요소가 loading 된 후에 함수가 자동 실행 되게 하겠다
+            //body 안쪽에 모든 요소를 제어할 수 있다
+            var out = "";
+            out += "<ul>";
+                out+="<li>javascript</li>";
+                out+="<li>jquery</li>";
+                out+="<li>oracle</li>";
+            out+="</ul>"
+
+            document.body.innerHTML = out;
+
+            var header = document.createElement("h1");
+
+            var textnode = document.createTextNode("hello");
+
+            header.appendChild(textnode);
+
+            doc.body.appendChild(header);
+        
+            //img 태그 생성하고 이미지 src 속성을 안고 body append
+            var img = document.createElement("img");
+            img.setAttribute("src", "images/1.jpg");
+            img.setAttribute("width", '100');
+            img.setAttribute("height", '100')
+            document.bofy.appendChild(img);
+        }
+    </script>
+</head>
+<body>
+    HELLO WORLD
+</body>
+
+    </script>
+</html>
