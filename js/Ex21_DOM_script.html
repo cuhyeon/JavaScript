@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        window.onload 이벤트에서 btnGetData 요소에 onclick 이벤트를 걸고
+        id = txtmessage 요소 객체를 얻어서
+        값을 (value) console.log() 통해서 출력
+    */
+    window.onload = function() { //익명함수
+        var btnobj = document.getElementById("btnGetData");
+        btnobj.onclick = function() { //이벤트 발생시 동작하는 기능(함수)
+            var txtmsg = document.getElementById("textmessage");
+            console.log(textmessage.value);
+            var str = "";
+            str += "ID : " + txtmsg.getAttribute("id");
+            str += "/nVALUE : " + txtmsg.getAttribute("value");
+            str += "/nTYPE : " + txtmsg.getAttribute("value");        
+            str += "/nTYPE : " + txtmsg.value; //간단하고 편한방법        
+            str += "/nLENGTH : " + txtmsg.value.length;
+            console.log(str);         
+
+        }   
+
+        //btnCreate 요소에 onclick 이벤트를 걸고
+        //input 태그를 동적으로 생성하고 type = text, id =txtbox, value= 홍길동 생성
+        //body의 자식 요소로 추가
+    }
+    
+    document.getElementById("btnCreate").onclick = function() {
+        var txtname = document.createElement("input");
+        txtname.setAttribute("type", "text");
+        txtname.setAttribute("id", "txtbox");
+        txtname.setAttribute("value", "홍길동");
+        txtname.setAttribute("style", "width : 50px");
+
+        document.body.appendChild(txtname);
+    }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="textmessage" value="hello">
+    <input type="button" value="getinfo" id="btnGetData">
+    <hr>
+    <input type="text" id="txtbox" value="홍길동">
+    <input type="button" value="동적생성" id="btnCreate">
+</body>
+</html>
